@@ -16,11 +16,19 @@ class XinlanggundongSpiderMiddleware(object):
     # scrapy acts as if the spider middleware does not modify the
     # passed objects.
 
-    # 自动生成的这儿直接增加设置ua 的部分,手动增加部分
+
     def process_request(self,request,spider):
+        # 自动生成的这儿直接增加设置ua 的部分,手动增加部分
         ua = random.choice( settings["USER_AGENT_LIST"] )
         print(ua)
         request.headers['User-Agent'] = ua  # 提取到的ua随机设置给请求
+
+
+        # 设置代理,需要使用的时候使用，并且记得settings中设置，或者维护的代理池中提取（数据库）
+
+        # proxy = random.choice( settings["PROXY"] )
+        # request.meta['proxy'] = proxy
+        pass
 
 
     @classmethod
