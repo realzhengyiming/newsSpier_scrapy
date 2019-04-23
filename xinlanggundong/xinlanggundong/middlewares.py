@@ -4,14 +4,24 @@
 #
 # See documentation in:
 # http://doc.scrapy.org/en/latest/topics/spider-middleware.html
+import random
 
 from scrapy import signals
+
+from scrapy.conf import settings   # 这儿需要注意导入
 
 
 class XinlanggundongSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the spider middleware does not modify the
     # passed objects.
+
+    # 自动生成的这儿直接增加设置ua 的部分,手动增加部分
+    def process_request(self,request,spider):
+        ua = random.choice( settings["USER_AGENT_LIST"] )
+        print(ua)
+        request.headers['User-Agent'] = ua  # 提取到的ua随机设置给请求
+
 
     @classmethod
     def from_crawler(cls, crawler):
