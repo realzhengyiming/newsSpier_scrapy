@@ -5,18 +5,45 @@ import scrapy
 
 
 class XinlangspiderSpider(scrapy.Spider):
+
     name = "xinlangspider"
-    allowed_domains = ["news.sina.com.cn/roll/"]
-    start_urls = ['https://news.sina.com.cn/roll/']
+    allowed_domains = ["news.sina.com.cn"]
+    start_urls = ['https://news.sina.com.cn/roll/#pageid=153&lid=2509&k=&num=50&page=1']
 
-    def parse(self, response):  # 这儿负责不断的翻页
-        # print(response.body )
 
-        pass
+   # 这儿是生成后面的页面的url的
+    def makeUrlList(self):
+        # 通过url来进行合成
+        tempList = []
+        rawUrl = "https://news.sina.com.cn/roll/#pageid=153&lid=2509&k=&num=50&page="
+        for num in range(2,50):  # 50*50 =2500
 
-    def parseNextDetail(self,response): # 这边是具体解析每一页的内容
+            url = rawUrl+str(num)
+            print(url)
+            tempList.append(url)
+        print("生成url列表成功")
+        return tempList
+
+
+    def parse(self, response):  # 这儿负责不断的翻页，生成每一页的url
+        print(response.url )
+        nextUrl = self.makeUrlList()
+        # 生成下一页的url todo 如何准确的知道解析了后返回就可以了。遇到前一天的就停止也是可以的
+        com =1
+        for url in nextUrl:
+            print("第一页%d"%com)
+            print(url)
+            yield scrapy.Request(url=url, callback=self.parsePageUrls,dont_filter=True)  # 为什么只执行了一次
+            # yield response.follow(url,callback=self.parsePageUrls)
+
+            com+=1
+
+
+
+    def parsePageUrls(self,response): # 这边是具体解析每一页的内容
         print(response.xpath('//head/title/text()').extract_first())
         mainbody = response.xpath('//div[@id="d_list"]')  # xpath对象
+        urlcount = 0
         for li in mainbody[0].xpath("//li"):
             # print(li.extract())
             # for span in li.xpath("span"): # 一共有三个span这样子
@@ -39,7 +66,9 @@ class XinlangspiderSpider(scrapy.Spider):
                     print(nowYear)
                     dateTime = nowYear + "-" + "-".join(templist)
                     print(dateTime)
+            urlcount+=1
 
             # print(dateTimeStr)
             print()
+        print(urlcount)
 
