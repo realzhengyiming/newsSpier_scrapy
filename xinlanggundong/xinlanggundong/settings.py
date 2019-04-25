@@ -19,7 +19,7 @@ NEWSPIDER_MODULE = 'xinlanggundong.spiders'
 #USER_AGENT = 'xinlanggundong (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # 设置UA user-agent PC
 USER_AGENT_LIST = [
@@ -44,12 +44,13 @@ my_headers = [  # 这边为了得到直接的手机端的页面代码返回，�
             ]
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-#CONCURRENT_REQUESTS = 32
+# CONCURRENT_REQUESTS = 32
 
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY = 3
+# 设置下载延时。
+DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -76,8 +77,8 @@ my_headers = [  # 这边为了得到直接的手机端的页面代码返回，�
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    # 'xinlanggundong.middlewares.MyCustomDownloaderMiddleware': 543,
-    'xinlanggundong.middlewares.XinlanggundongSpiderMiddleware' : 543,
-    'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware':None,
+    'xinlanggundong.middlewares.XinlanggundongSpiderMiddleware' : 543,  # 这儿替换上自己的中间件来使用。
+    'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware':None,  # 像这种这样就是可以关掉
 }
 
 # Enable or disable extensions
