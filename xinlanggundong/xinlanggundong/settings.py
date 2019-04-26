@@ -50,7 +50,7 @@ my_headers = [  # 这边为了得到直接的手机端的页面代码返回，�
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
 # 设置下载延时。
-DOWNLOAD_DELAY = 3
+DOWNLOAD_DELAY = 0.5  # 或者0.8 一般，太慢效率不行
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -73,12 +73,14 @@ DOWNLOAD_DELAY = 3
 #    'xinlanggundong.middlewares.XinlanggundongSpiderMiddleware': 543,
 #}
 
+FEED_EXPORT_ENCODING = "gb18030"
+
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    # 'xinlanggundong.middlewares.MyCustomDownloaderMiddleware': 543,
     'xinlanggundong.middlewares.XinlanggundongSpiderMiddleware' : 543,  # 这儿替换上自己的中间件来使用。
-    'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware':None,  # 像这种这样就是可以关掉
+    'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware':None,  # 默认的是500需要，像这种这样就是可以关掉
 }
 
 # Enable or disable extensions

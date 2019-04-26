@@ -13,38 +13,34 @@ from scrapy.conf import settings   # 这儿需要注意导入
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-# todo
-class SeleniumMiddlerware(object):
-    """
-    利用selenium，获取动态页面数据
-    """
-    def process_request(self, request, spider):
-        print("正在调用请求哈")
-        chrome_options = Options()
-        chrome_options.add_argument('--headless')  # 使用无头谷歌浏览器模式
-        chrome_options.add_argument('--disable-gpu')
-        chrome_options.add_argument('--no-sandbox')
-        # 指定谷歌浏览器路径  ,寻找一个对应版本的chrome驱动去才可以。 todo
-        self.driver = webdriver.Chrome(chrome_options=chrome_options,
-                                       executable_path=r'D:\chromedriver')
-        if request.url:  #不为什么的话，这个代码怎么搞呢。
-            self.driver.get(request.url)
-            time.sleep(1)  # 这儿设置了限速，手动限速
-            html = self.driver.page_source
-            self.driver.quit()
-            print("这儿是解析的requests")
-            # print(html)  这个暂时可以注释掉
-            return scrapy.http.HtmlResponse(url=request.url, body=html.encode('utf-8'), encoding='utf-8',
-                                            request=request)
+# # todo
+# class SeleniumMiddlerware(object):
+#     """
+#     利用selenium，获取动态页面数据
+#     """
+#     def process_request(self, request, spider):
+#         print("正在调用请求哈")
+#         chrome_options = Options()
+#         chrome_options.add_argument('--headless')  # 使用无头谷歌浏览器模式
+#         chrome_options.add_argument('--disable-gpu')
+#         chrome_options.add_argument('--no-sandbox')
+#         # 指定谷歌浏览器路径  ,寻找一个对应版本的chrome驱动去才可以。 todo
+#         self.driver = webdriver.Chrome(chrome_options=chrome_options,
+#                                        executable_path=r'D:\chromedriver')
+#         if request.url:  #不为什么的话，这个代码怎么搞呢。
+#             self.driver.get(request.url)
+#             time.sleep(1)  # 这儿设置了限速，手动限速
+#             html = self.driver.page_source
+#             self.driver.quit()
+#             print("这儿是解析的requests")
+#             # print(html)  这个暂时可以注释掉
+#             return scrapy.http.HtmlResponse(url=request.url, body=html.encode('utf-8'), encoding='utf-8',
+#                                             request=request)
 
 
 class XinlanggundongSpiderMiddleware(object):
-    # Not all methods need to be defined. If a method is not defined,
-    # scrapy acts as if the spider middleware does not modify the
-    # passed objects.
 
-
-    # 1这个是静态的设置配置id，
+    # 1这个是静态的设置配置id，启用这个就可以了
     # def process_request(self,request,spider):
     #     # 自动生成的这儿直接增加设置ua 的部分,手动增加部分
     #     ua = random.choice( settings["USER_AGENT_LIST"] )
@@ -56,9 +52,15 @@ class XinlanggundongSpiderMiddleware(object):
     #     # request.meta['proxy'] = proxy
     #     pass
 
+
+
+    # def process_request(self, request, spider):
+    #     referer = request.url
+    #     if referer:
+    #         request.headers['referer'] = referer  chrome如何设置referer
     # 2这个是chrome 调用的。  重要的是找正确版本的chromedriver才可以用的样子。
     def process_request(self, request, spider):
-        print("正在调用请求哈")
+        print("正在调用chrome请求")
         chrome_options = Options()
         chrome_options.add_argument('--headless')  # 使用无头谷歌浏览器模式
         chrome_options.add_argument('--disable-gpu')
@@ -68,10 +70,10 @@ class XinlanggundongSpiderMiddleware(object):
                                        executable_path=r'D:/chromedriver')
         if request.url :  #不为什么的话，这个代码怎么搞呢。
             driver.get(request.url)
-            time.sleep(1)  # 这儿设置了限速，手动限速
+            time.sleep(0.8)  # 这儿设置了限速，手动限速
             html = driver.page_source
             driver.quit()
-            print("这儿是解析的requests")
+            # print("这儿是解析的requests")
             # print(html)  这个暂时可以注释掉
             return scrapy.http.HtmlResponse(url=request.url, body=html.encode('utf-8'), encoding='utf-8',
                                             request=request)
