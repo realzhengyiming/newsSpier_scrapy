@@ -73,7 +73,7 @@ DOWNLOAD_DELAY = 0.5  # 或者0.8 一般，太慢效率不行
 #    'xinlanggundong.middlewares.XinlanggundongSpiderMiddleware': 543,
 #}
 
-FEED_EXPORT_ENCODING = "gb18030"
+FEED_EXPORT_ENCODING = "utf-8"  # 这儿还是设置成gbk 或者utf-8 好一点，默认都是
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
