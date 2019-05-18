@@ -16,22 +16,22 @@
 ### 使用方法:  
 + 1.安装scrapy 环境，建议conda配置
 + 2.git clone https://github.com/realzhengyiming/newsSpier_scrapy.git
-+ 3.'''cd Crawler'''   
-+ 4.'''python Together_Crawl.py''' 一次性跑三个爬虫，包括腾讯、网易、新浪
-+ 5.'''python togetherCrawl_scheduling.py''' 一次性跑三个爬虫，包括腾讯、网易、新浪（定时，时间设置先在settings.py中设置）
-    + 设置settings.py 中''' CRAWLALL_RUN_TIME="XX:XX" 24小时制 '''
-    + 如果是linux上定时跑，可以 '''nohup python togetherCrawl_scheduling.py'''  
-+ 6. '''python tengxunMain.py'''  只爬取腾讯爬虫的部分
-+ 7. '''python wangyiMain.py'''  只爬取腾讯爬虫的部分  
-+ 8.'''python xinlangMain.py'''  只爬取腾讯爬虫的部分
++ 3.```cd Crawler```   
++ 4.```python Together_Crawl.py``` 一次性跑三个爬虫，包括腾讯、网易、新浪
++ 5.```python togetherCrawl_scheduling.py``` 一次性跑三个爬虫，包括腾讯、网易、新浪（定时，时间设置先在settings.py中设置）
+    + 设置settings.py 中``` CRAWLALL_RUN_TIME="XX:XX" 24小时制 ```
+    + 如果是linux上定时跑，可以 ```nohup python togetherCrawl_scheduling.py```  
++ 6. ```python tengxunMain.py```  只爬取腾讯爬虫的部分
++ 7. ```python wangyiMain.py```  只爬取腾讯爬虫的部分  
++ 8.```python xinlangMain.py```  只爬取腾讯爬虫的部分
 + 9. 重写了命令，可以直接scrapy crawlall 进行三个爬虫的同时爬取（同理默认scrapy crawl tengxun 这样也是可以的）   
 
 ### 更多设置  
-+ 6.新闻中的图片需要下载请在settings.py 中 设置，如''' IMAGES_STORE = "../static/images/"   '''(此处使用相对路径）  
-    + '''DOWMLOAD_IMG_IN_ACONTENT = False '''   开启或者关闭把新闻中的图片本地化操作。 
++ 6.新闻中的图片需要下载请在settings.py 中 设置，如``` IMAGES_STORE = "../static/images/"   ```(此处使用相对路径）  
+    + ```DOWMLOAD_IMG_IN_ACONTENT = False ```   开启或者关闭把新闻中的图片本地化操作。 
 + 7.开关词云的生成，settings.py 中设置  
-    + ''' MAKE_WORDCLOUD_STORE = True ''' 默认开启词云
-    + ''' WORDCLOUD_STORE = "../static/images/WordCloud/" ''' 设置词云的生成地址，默认是相对路径，项目外同级目录
+    + ``` MAKE_WORDCLOUD_STORE = True ``` 默认开启词云
+    + ``` WORDCLOUD_STORE = "../static/images/WordCloud/" ``` 设置词云的生成地址，默认是相对路径，项目外同级目录
 
 ### 注意🎃  
 因为我这个项目是另一个完整项目的一部分， 另一个完整项目是django+scrapy 的新闻的情感分析平台， 这是scrapy用来做数据爬取入库操作的。  
