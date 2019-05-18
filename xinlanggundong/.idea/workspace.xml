@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0273619a-55a7-442f-9705-27e36cb7af0e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/item.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/item.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xinlanggundong/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/xinlanggundong/items.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xinlanggundong/middlewares.py" beforeDir="false" afterPath="$PROJECT_DIR$/xinlanggundong/middlewares.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xinlanggundong/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/xinlanggundong/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xinlanggundong/spiders/xinlangspider.py" beforeDir="false" afterPath="$PROJECT_DIR$/xinlanggundong/spiders/xinlangspider.py" afterDir="false" />
-    </list>
+    <list default="true" id="0273619a-55a7-442f-9705-27e36cb7af0e" name="Default" comment="" />
     <ignored path="xinlanggundong.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -31,7 +22,7 @@
     <session id="698026653">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="1" />
@@ -116,8 +107,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="161">
-                <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+              <first_editor relative-caret-position="322">
+                <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
               </first_editor>
               <second_editor />
             </state>
@@ -127,8 +118,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/xinlanggundong/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+            <state relative-caret-position="115">
+              <caret line="78" column="37" selection-start-line="78" selection-start-column="37" selection-end-line="78" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -424,7 +415,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17138238" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -520,8 +510,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="161">
-            <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+          <first_editor relative-caret-position="322">
+            <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
           </first_editor>
           <second_editor />
         </state>
@@ -583,8 +573,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/xinlanggundong/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+        <state relative-caret-position="115">
+          <caret line="78" column="37" selection-start-line="78" selection-start-column="37" selection-end-line="78" selection-end-column="37" />
         </state>
       </provider>
     </entry>
