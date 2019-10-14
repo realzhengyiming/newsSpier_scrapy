@@ -22,8 +22,8 @@
     + 设置settings.py 中``` CRAWLALL_RUN_TIME="XX:XX" 24小时制 ```
     + 如果是linux上定时跑，可以 ```nohup python togetherCrawl_scheduling.py```  
 + 6. ```python tengxunMain.py```  只爬取腾讯爬虫的部分
-+ 7. ```python wangyiMain.py```  只爬取腾讯爬虫的部分  
-+ 8.```python xinlangMain.py```  只爬取腾讯爬虫的部分
++ 7. ```python wangyiMain.py```  只爬取网易新闻爬虫的部分  
++ 8.```python xinlangMain.py```  只爬取新浪爬虫的部分
 + 9. 重写了命令，可以直接scrapy crawlall 进行三个爬虫的同时爬取（同理默认scrapy crawl tengxun 这样也是可以的）   
 
 ### 更多设置  
